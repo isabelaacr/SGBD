@@ -100,4 +100,6 @@ ALTER TABLE Alunos
 ALTER TABLE Alunos
   CHANGE COLUMN data_nascimento data_nasc DATE;
 
+DROP TABLE Alunos;
 
+DROP INDEX idx_nome_curso;
