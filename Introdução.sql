@@ -80,13 +80,24 @@ CREATE TABLE Funcionarios (
 CREATE TABLE Produtos (
  IDPRODUTO INT PRIMARY KEY,
   Nome VARCHAR (100),
-  Preco DECIMAL (10, 2)
-  Estado VARCHAR (20)
+  Preco DECIMAL (10, 2),
+  Estado VARCHAR (20),
   CHECK (Status IN ('Ativo','Inativo','Em estoque'))
   );
 
 CREATE INDEX idx_nome_curso
-	ON Alunos (nome, cursoid);
+	ON Alunos (nome, curso_id);
 
 SHOW CREATE TABLE Alunos;
 SHOW INDEX FROM Alunos;
+
+ALTER TABLE Alunos
+ ADD endereco VARCHAR (200);
+
+ALTER TABLE Alunos
+ MODIFY COLUMN curso varchar (100);
+
+ALTER TABLE Alunos
+  CHANGE COLUMN data_nascimento data_nasc DATE;
+
+
