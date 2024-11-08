@@ -84,3 +84,9 @@ CREATE TABLE Produtos (
   Estado VARCHAR (20)
   CHECK (Status IN ('Ativo','Inativo','Em estoque'))
   );
+
+CREATE INDEX idx_nome_curso
+	ON Alunos (nome, cursoid);
+
+SHOW CREATE TABLE Alunos;
+SHOW INDEX FROM Alunos;
