@@ -14,3 +14,12 @@ VALUES (2, 'Maria', 'rua anita', '6342954'),
 
 INSERT INTO Clientes  --omitindo os atributos, porém seguindo a ordem dos atributos na tabela
 VALUES (4, 'Pedro', 'rua quatro', '45783578');
+
+--COMANDO SET
+
+SET @nome = 'Pedrita';
+SET @end = 'rua do fim';
+SET @tel = '34677547';
+
+INSERT INTO Clientes	
+	VALUES (5, @nome, @end, @tel);
