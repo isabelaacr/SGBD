@@ -29,3 +29,12 @@ INSERT INTO Clientes
 UPDATE Clientes 
 	SET Telefone = '999999'
 	WHERE Nome = 'Joao';
+
+-- COMANDO DELETE pode deletar e também atualizar
+
+DELETE FROM Clientes
+	WHERE IDCliente = 2;
+
+DELETE FROM PEDIDOS 
+	WHERE IDCliente = 1 AND data_pedido < '2024-06-01';
+		
