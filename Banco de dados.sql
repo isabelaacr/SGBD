@@ -40,4 +40,21 @@ INSERT INTO Pedidos (IDPedido, IDCliente, DataPedido, Total)
 VALUES (1, 1, '2024-06-01', 'R$129,80');
 	     (2, 2, '2024-06-02', 'R$219,80');
        (3, 3, '2024-06-03', 'R$189,80');
-       
+
+INSERT INTO ItensPedido (IDItem, IDPedido, IDProduto, Quantidade)
+VALUES (1, 1, 1, '2');
+       (2, 2, 2, '1');
+       (3, 3, 3, '3');
+       (4, 4, 4, '1');
+
+UPDATE Clientes 
+	SET Telefone = '999999'
+	WHERE Nome = 'Joao';
+    
+UPDATE Pedidos 
+	SET Total = 200.0
+    where IDCliente = 1 AND data >= '2024-06-01';
+    
+UPDATE Produtos 
+	SET Preco = Preco * 1.1;
+
