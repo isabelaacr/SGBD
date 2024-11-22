@@ -23,3 +23,9 @@ SET @tel = '34677547';
 
 INSERT INTO Clientes	
 	VALUES (5, @nome, @end, @tel);
+
+-- COMANDO UPDATE (para atualizar uma ou mais colunas de uma tabela)
+
+UPDATE Clientes 
+	SET Telefone = '999999'
+	WHERE Nome = 'Joao';
