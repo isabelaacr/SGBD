@@ -53,7 +53,7 @@ UPDATE Clientes
     
 UPDATE Pedidos 
 	SET Total = 200.0
-    where IDCliente = 1 AND data >= '2024-06-01';
+    where IDCliente = 1 AND DataPedido >= '2024-06-01';
     
 UPDATE Produtos 
 	SET Preco = Preco * 1.1;
