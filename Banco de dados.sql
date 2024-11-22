@@ -58,3 +58,10 @@ UPDATE Pedidos
 UPDATE Produtos 
 	SET Preco = Preco * 1.1;
 
+DELETE FROM Clientes
+-- WHERE IDCliente = 2; possui id referencial e por isso vai dar erro
+WHERE IDCliente = 4;
+
+DELETE FROM PEDIDOS 
+	WHERE IDCliente = 1 AND data_pedido < '2024-06-01';
+
