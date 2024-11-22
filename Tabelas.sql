@@ -16,3 +16,11 @@ CREATE TABLE Pedidos (
   DataPedido DATE,
   Total DECIMAL (10,2),
   FOREIGN KEY (IDCliente) REFERENCES Clientes(IDCliente));
+
+CREATE TABLE ItensPedido (
+   IDItem INT PRIMARY KEY,
+  IDPedido INT,
+  IDProduto INT,
+  Quantidade INT,
+  FOREIGN KEY (IDPedido) REFERENCES Pedidos (IDPedido),
+  FOREIGN KEY (IDProduto) REFERENCES Produtos (IDProduto));
