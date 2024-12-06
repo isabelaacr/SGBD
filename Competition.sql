@@ -104,6 +104,6 @@ GROUP BY c.name, d.is_men;
 -- Calcular média de idade dos atletasnationality
 SELECT n.country_name,
 	AVG(YEAR(CURRENT_DATE) - YEAR(a.birth_date)) AS IdadeMedia
-    	FROM athlete a, nationality nationality nationality	
+    	FROM athlete a, nationality n
         WHERE a.nationality_id = n.id
         GROUP.BY n.country_name;
