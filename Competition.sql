@@ -106,4 +106,4 @@ SELECT n.country_name,
 	AVG(YEAR(CURRENT_DATE) - YEAR(a.birth_date)) AS IdadeMedia
     	FROM athlete a, nationality n
         WHERE a.nationality_id = n.id
-        GROUP.BY n.country_name;
+        GROUP BY n.country_name;
