@@ -26,23 +26,23 @@ FOREIGN KEY (IDPedido) REFERENCES Pedidos (IDPedido),
 FOREIGN KEY (IDProduto) REFERENCES Produtos (IDProduto));
 
 INSERT INTO Clientes (IDCliente, Nome, Endereco, Telefone)
-VALUES (1, 'Joao', 'rua augusta', '6946954'), # tinha erro aqui e nos outros inserts. Estava ; e não , como deve ser
+VALUES (1, 'Joao', 'rua augusta', '6946954'), 
 (2, 'Maria', 'rua anita', '6342954'),
 (3, 'Jose', 'rua dois', '43483578'),
-(4, 'Pedro', 'rua quatro', '45783578'); # ; só vai aqui na última linha inserida para finalizar o comando
+(4, 'Pedro', 'rua quatro', '45783578');
 
 INSERT INTO Produtos (IDProduto, Nome, Categoria, Preco)
-VALUES (1, 'Camiseta branca', 'Roupas', 39.90), # erro aqui também. Estava como string (entre aspas). Como na tabela foi declarado como decimal, causava erro de restrição de domínio
+VALUES (1, 'Camiseta branca', 'Roupas', 39.90), 
 (2, 'Calca jeans', 'Roupas', 89.90),
 (3, 'Tenis esportivo', 'Calcados', 199.90);
 
 INSERT INTO Pedidos (IDPedido, IDCliente, DataPedido, Total)
-VALUES (1, 1, '2024-06-01', 129.80), # tinha erro aqui também, mesmo de cima
+VALUES (1, 1, '2024-06-01', 129.80), 
 (2, 2, '2024-06-02', 219.80),
 (3, 3, '2024-06-03', 189.80);
 
 INSERT INTO ItensPedido (IDItem, IDPedido, IDProduto, Quantidade)
-VALUES (1, 1, 1, 2), # erro aqui também, a quantiadade estava como String quando deveria ser INT, ajustei
+VALUES (1, 1, 1, 2), 
 (2, 2, 2, 1),
 (3, 3, 3, 3);
 
