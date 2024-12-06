@@ -101,9 +101,30 @@ FROM competition c, event e, discipline discipline
 WHERE c.id = e.competition_id AND e.discipline_id = d.id
 GROUP BY c.name, d.is_men;
 
+--ou
+
+SELECT c.name AS competition_name,
+       d.is_men AS is_male_discipline,
+       COUNT(e.id) AS event_count
+FROM competition c
+JOIN event e ON c.id = e.competition_id
+JOIN discipline d ON e.discipline_id = d.id
+GROUP BY c.name, d.is_men;
+
 -- Calcular média de idade dos atletas
 SELECT n.country_name,
 	AVG(YEAR(CURRENT_DATE) - YEAR(a.birth_date)) AS IdadeMedia
     	FROM athlete a, nationality n
         WHERE a.nationality_id = n.id
         GROUP BY n.country_name;
+
+-- 
+SELECT DISTINCT d.name AS discipline_name,
+    	FROM event e, discipline d
+        WHERE e.discipline_id = d.id
+
+--ou
+
+SELECT DISTINCT d.name AS discipline_name
+FROM event e
+JOIN discipline d ON e.discipline_id = d.id;
