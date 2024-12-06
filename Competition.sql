@@ -74,8 +74,6 @@ INSERT INTO nationality (id, country_name, country_abbr) VALUES
  (14535607, 'André', 'DE GRASSE', 3, '1994-11-10'),
  (14201842, 'Yohan', 'BLAKE', 1, '1989-12-26');
 
-
-
   CREATE TABLE final_result (
  event_id INT,
  athlete_id INT,
@@ -94,3 +92,11 @@ INSERT INTO nationality (id, country_name, country_abbr) VALUES
  (1, 14238562, '00:00:10', 2, FALSE, FALSE, FALSE),
  (1, 14535607, '00:00:10', 3, FALSE, FALSE, FALSE),
  (1, 14201842, '00:00:10', 4, FALSE, FALSE, FALSE);
+
+-- Consulta de quantos homens competem
+SELECT c.name AS competition_name,
+	d.is_men AS is_male_discipline,
+    COUNT (e.id) AS event_count
+FROM competition c, event e, discipline discipline
+WHERE c.id = e.competition_id AND e.discipline_id = d.id
+GROUP BY c.name, d.is_men;
